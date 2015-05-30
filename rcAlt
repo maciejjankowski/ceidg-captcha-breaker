@@ -1,0 +1,17 @@
+export LD_LIBRARY_PATH=/home/b-good/domains/b-good.mydevil.net/ceidg/bin
+
+cd tmp
+mkdir tmp-${1}
+
+curl -sk "https://prod.ceidg.gov.pl/CEIDG/CEIDG.Public.UI/captcha.ashx?id=${1}&asmp3=1&t=210" -H "Cookie: ASP.NET_SessionId=${2}" --compressed > tmp-${1}/${1}.mp3
+../bin/lame --decode tmp-${1}/${1}.mp3 tmp-${1}/${1}.wav
+../bin/sox tmp-${1}/${1}.wav  tmp-${1}/${1}_.wav silence 1 0.1 1% 1 0.5 1% : newfile : restart
+rm tmp-${1}/${1}.wav
+
+rm tmp-${1}/${1}.mp3
+
+cd tmp-${1}
+../../bin/sox ${1}_005.wav ${1}_005a.wav reverse silence 1 0.1 1% reverse
+rm ${1}_005.wav
+mv ${1}_005a.wav ${1}_005.wav
+cd ../..

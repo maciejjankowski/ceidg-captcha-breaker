@@ -1,0 +1,14 @@
+{
+  "port" :"8001",
+  "delay":"1",
+  "workers_count" : 5,
+  "refresh_cycle": 60000,
+  "cycle_delay" : 1
+  ,"exit_on_error" : 1,
+  "sids":[""],
+  "secret": "123",
+  "demo":1,
+  "secrets":{
+    "demo":"123"
+  }
+}

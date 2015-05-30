@@ -1,0 +1,19 @@
+{
+  "name": "ceidg-captcha-breaker",
+  "version": "0.0.2",
+  "author": "Maciej<maj1337@gmail.com>",
+  "description": "psuje kapcie",
+  "main": "./server.js",
+  "dependencies": {
+    "async": "~0.2.9",
+    "express": "~3.4.7",
+    "iconv": "^2.1.4",
+    "lodash": "~2.4.1",
+    "nconf": "~0.6.9",
+    "request": "^2.33.0",
+    "socket.io": "~0.9.16"
+  },
+  "engines": {
+    "node": ">=0.8.x"
+  }
+}
